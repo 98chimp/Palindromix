@@ -1,0 +1,36 @@
+#extend("base")
+
+#export("head") {
+	<title>My App</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700,300" rel="stylesheet">
+	<link rel="stylesheet" href="/styles/app.css">
+}
+
+#export("body") {
+
+    <form action="" method="post">
+        <div class="row">
+            <div class="one column"></div>
+            <div class="eleven columns">
+                <label>Phrase</label>
+                <input name="content" class="u-full-width" placeholder="type in your phrase" />
+                <center><input class="button-primary" type="submit" value="Palindromic?"></center>
+            </div>
+        </div>
+    </form>
+
+    <div class="container"><center>
+        #if(phrase) {
+            #if(phrase.ispalindromic) {
+                <h1><span>🍏</span></h1>
+            } ##else() {
+                <h1><span>🍎</span></h1>
+            }
+            <p></p>
+            <a rel="history" href="/history"><p><small>history</small></p></a>
+        }
+        </center>
+    </div>
+    
+}
